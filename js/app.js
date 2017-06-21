@@ -28,11 +28,25 @@ Enemy.prototype.render = function() {
 // This class requires an update(), render() and
 // a handleInput() method.
 
-
+var Player = function(x, y) {
+    this.sprite = 'images/char-boy.png';
+    this.x = x;
+    this.y = y;
+}
+Player.prototype.update = function(dt) {
+    // body...
+};
+Player.prototype.render = function() {
+    ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
+};
+Player.prototype.handleInput = function(code) {
+    console.log(code);
+};
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
 // Place the player object in a variable called player
-
+var allEnemies = [new Enemy(1, 1, 1)];
+var player = new Player(100, 300);
 
 
 // This listens for key presses and sends the keys to your
@@ -43,7 +57,6 @@ document.addEventListener('keyup', function(e) {
         38: 'up',
         39: 'right',
         40: 'down'
-    };
-    console.log("up");
+    }
     player.handleInput(allowedKeys[e.keyCode]);
 });
