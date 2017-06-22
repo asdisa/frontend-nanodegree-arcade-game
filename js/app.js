@@ -1,8 +1,8 @@
-var Enemy = function(x, y, speed) {
+var Enemy = function() {
     this.sprite = 'images/enemy-bug.png';
-    this.x = x;
-    this.y = y;
-    this.speed = speed;
+    this.x = Functions.getRandomX();
+    this.y = Functions.getRandomY();
+    this.speed = Functions.getRandomSpeed();
 };
 Enemy.prototype.update = function(dt) {
     this.move(dt);
@@ -56,11 +56,8 @@ Player.prototype.handleInput = function(code) {
     console.log(this.x, this.y);
 };
 
-var allEnemies = [new Enemy(0, 41, 150)];
+var allEnemies = [new Enemy(), new Enemy(), new Enemy(), new Enemy()]
 var player = new Player(200, 373);
-console.log(Functions.getRandomX());
-console.log(Functions.getRandomX());
-console.log(Functions.getRandomX());
 
 document.addEventListener('keyup', function(e) {
     var allowedKeys = {

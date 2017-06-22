@@ -6,14 +6,19 @@
 	}
 
 	function getRandomSpeed() {
-		return getRandomIntInclusive(1, 5) * 100;
+		return getRandomIntInclusive(1, 3) * 100;
 	}
 
 	function getRandomX() {
 		return getRandomIntInclusive(1, 5) * 101;
 	}
+
+	function getRandomY() {
+		return 41 + getRandomIntInclusive(0, 2) * 83;
+	}
 	window.Functions = {
 	    getRandomSpeed: getRandomSpeed,
-	    getRandomX: getRandomX
+	    getRandomX: getRandomX,
+	    getRandomY: getRandomY
 	};
 })();
