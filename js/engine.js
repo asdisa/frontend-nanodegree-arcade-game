@@ -116,7 +116,7 @@ var Engine = (function(global) {
                 'images/grass-block.png'    // Row 2 of 2 of grass
             ],
             numRows = 6,
-            numCols = 5,
+            numCols = 50,
             row, col;
 
         /* Loop through the number of rows and columns we've defined above
